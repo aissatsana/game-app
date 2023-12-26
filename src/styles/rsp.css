@@ -1,0 +1,12 @@
+
+  .choice-image {
+    cursor: pointer;
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    transition: opacity 0.3s; 
+  }
+
+  .choice-image:hover {
+    transform: scale(1.1);
+  }
