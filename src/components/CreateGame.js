@@ -8,7 +8,8 @@ const CreateGame = ({path, gametype}) => {
     const [roomId, setRoomId] = useState('');
     const handleCreateGame = async () => {
         try {
-          const response = await axios.post('http://localhost:5000/rooms/createRoom', { gametype });
+          // const response = await axios.post('http://localhost:5000/rooms/createRoom', { gametype });
+          const response = await axios.post('/rooms/createRoom', { gametype });
           const newRoomId = response.data.roomId;
           setRoomId(newRoomId);
           navigate(`${path}/${newRoomId}`);
