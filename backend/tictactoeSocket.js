@@ -30,7 +30,7 @@ function handleTicTacToeSocket(io, socket, rooms) {
       board[index] = player;
       room.setBoard(board);
       room.setCurrentPlayer(player === 'X' ? 'O' : 'X');
-      io.to(room.roomId).emit('tictac/updateBoard', { newBoard: board, currentPlayer: room.getCurrentPlayer() });
+      socket.broadcast.to(room.roomId).emit('tictac/updateBoard', { newBoard: board, currentPlayer: room.getCurrentPlayer() });
       if (checkWinner(board)) {
         io.to(roomId).emit('tictac/gameOver',{winner: player});
       } else if (board.every((cell) => cell !== null)) {
