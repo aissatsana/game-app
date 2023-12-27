@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "concurrently \"npm run start-server\" \"npm run start-react\"",
-    "start-react": "react-scripts start",
+    "start-react": "react-scripts start --port=3001",
     "start-server": "node backend/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
